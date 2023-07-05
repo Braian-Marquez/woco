@@ -13,8 +13,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
+import static org.springframework.web.bind.annotation.RequestMethod.*;
+
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", methods= {GET, POST, PUT, DELETE})
 @RequestMapping("/auth")
 public class UserAuthController {
 
