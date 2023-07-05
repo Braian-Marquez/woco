@@ -7,6 +7,7 @@ import com.nocountry.woco.auth.model.response.AuthenticationResponse;
 import com.nocountry.woco.auth.model.response.UserResponse;
 import com.nocountry.woco.auth.service.UserDetailsCustomService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,12 +19,14 @@ import java.io.IOException;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
-@RequiredArgsConstructor
-@CrossOrigin(origins = "*", methods= {GET, POST, PUT, DELETE})
 @RequestMapping("/auth")
 public class UserAuthController {
 
-    private final UserDetailsCustomService userDetailsService;
+    @Autowired
+    private UserDetailsCustomService userDetailsService;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     @PostMapping("/register")
     public ResponseEntity<UserResponse> signup(@Valid @RequestBody UserRequest user) throws IOException {
@@ -33,9 +36,8 @@ public class UserAuthController {
     }
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> login (
-            @RequestBody AuthenticationRequest authenticationRequest)  {
+            @RequestBody @Valid AuthenticationRequest authenticationRequest)  {
         return ResponseEntity.ok(userDetailsService.login(authenticationRequest));
     }
-
 
 }

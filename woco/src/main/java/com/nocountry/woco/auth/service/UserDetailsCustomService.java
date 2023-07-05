@@ -80,7 +80,7 @@ public class UserDetailsCustomService implements UserDetailsService {
 
 
     public AuthenticationResponse login(AuthenticationRequest authenticationRequest) {
-        UserEntity user = userRepository.findByEmail(authenticationRequest.getUsername());
+        UserEntity user = userRepository.findByEmail(authenticationRequest.getUsername()).get();
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),
                         authenticationRequest.getPassword()));

@@ -15,10 +15,6 @@ public class AuthenticationResponse {
         this.token = token;
     }
 
-    public AuthenticationResponse() {
-    }
 
-    public AuthenticationResponse(String username, String s, Long id) {
-    }
 }
 
