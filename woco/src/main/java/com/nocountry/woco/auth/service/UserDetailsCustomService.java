@@ -78,12 +78,12 @@ public class UserDetailsCustomService implements UserDetailsService {
 
 
     public AuthenticationResponse login(AuthenticationRequest authenticationRequest) {
-        UserEntity user = userRepository.findByEmail(authenticationRequest.getEmail());
+        UserEntity user = userRepository.findByEmail(authenticationRequest.getUsername());
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),
                         authenticationRequest.getPassword()));
 
-        return new AuthenticationResponse(user.getUsername(), jwtUtil.generateToken(user),user.getId());
+        return new AuthenticationResponse(user.getUsername(), jwtUtil.generateToken(user));
     }
 
 }
