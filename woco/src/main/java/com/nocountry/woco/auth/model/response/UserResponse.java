@@ -16,5 +16,4 @@ public class UserResponse {
 
     private String token;
 
-    private String role;
 }
