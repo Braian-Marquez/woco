@@ -31,7 +31,7 @@ public class UserAuthController {
     }
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> login (
-            @RequestBody @Valid AuthenticationRequest authenticationRequest)  {
+            @RequestBody AuthenticationRequest authenticationRequest)  {
         return ResponseEntity.ok(userDetailsService.login(authenticationRequest));
     }
 
