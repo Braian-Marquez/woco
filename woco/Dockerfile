@@ -5,7 +5,6 @@ COPY ${JAR_FILE} app.jar
 COPY woco/src/main/resources /app/resources
 USER root
 ENV JAVA_OPTS=""
-EXPOSE 8080
 ENV LANG en_GB.UTF-8
 ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar","-Djava.awt.headless=true" ]
 
