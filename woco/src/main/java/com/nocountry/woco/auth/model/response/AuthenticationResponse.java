@@ -17,5 +17,8 @@ public class AuthenticationResponse {
 
     public AuthenticationResponse() {
     }
+
+    public AuthenticationResponse(String username, String s, Long id) {
+    }
 }
 
