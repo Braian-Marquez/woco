@@ -38,7 +38,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
+    private static final String[] SWAGGER_ENDPOINTS = {
+            "/api/docs",
+            "/v2/api-docs",
+            "/swagger-ui/**",
+            "/swagger-resources",
+            "/swagger-resources/**",
+            "/configuration/ui",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/webjars/**"
+    };
 
 
     public void configure(AuthenticationManagerBuilder managerBuilder) throws Exception {
@@ -78,6 +88,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers(HttpMethod.POST, "/auth/register")
                 .permitAll()
+                .antMatchers(SWAGGER_ENDPOINTS)
+                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -90,6 +102,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers(
+                "/v3/api-docs/**",
+                "/api/docs",
+                "/api/swagger-ui/index.html",
+                "/**/swagger-ui/**");
+    }
 
 }
