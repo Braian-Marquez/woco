@@ -14,12 +14,12 @@ public class WocoApplication {
 		SpringApplication.run(WocoApplication.class, args);
 	}
 	@Bean
-	public WebMvcConfigurer getCorsConfiguration() {
+	public WebMvcConfigurer getConfiguration() {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("*")
+						.allowedOrigins("http://localhost:4200")
 						.allowedMethods("GET", "POST", "PUT", "DELETE")
 						.allowedHeaders("*");
 			}
