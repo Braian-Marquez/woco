@@ -118,6 +118,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/api/docs",
                 "/api/swagger-ui/index.html",
                 "/**/swagger-ui/**");
+
+        web.ignoring().antMatchers(HttpMethod.OPTIONS);
     }
 
 
