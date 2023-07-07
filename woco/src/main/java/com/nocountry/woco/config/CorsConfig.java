@@ -15,7 +15,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("*")
+                        .allowedOrigins("http://localhost:4200","https://s9-04-t-java-angular.web.app/")
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .exposedHeaders("header1", "header2")
