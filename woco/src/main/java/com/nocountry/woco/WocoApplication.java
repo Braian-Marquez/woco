@@ -13,5 +13,16 @@ public class WocoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WocoApplication.class, args);
 	}
-
+	@Bean
+	public WebMvcConfigurer getCorsConfiguration() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**")
+						.allowedOrigins("*")
+						.allowedMethods("GET", "POST", "PUT", "DELETE")
+						.allowedHeaders("*");
+			}
+		};
+	}
 }
