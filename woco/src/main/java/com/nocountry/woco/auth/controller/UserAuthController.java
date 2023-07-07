@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
-@CrossOrigin(origins = "http://localhost:4200", methods= {GET, POST, PUT, DELETE})
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/auth")
 public class UserAuthController {

@@ -76,15 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().configurationSource(request -> {
-                    CorsConfiguration cors = new CorsConfiguration();
-                    cors.setAllowedOrigins(Arrays.asList("*"));
-                    cors.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-                    cors.setAllowedHeaders(Arrays.asList("*"));
-                    cors.setExposedHeaders(Arrays.asList("*"));
-                    return cors;
-                })
-                .and()
+        http.cors().and()
                 .csrf()
                 .disable()
                 .sessionManagement()
