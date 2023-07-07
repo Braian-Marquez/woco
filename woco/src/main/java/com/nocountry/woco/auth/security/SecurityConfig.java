@@ -140,13 +140,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return bean;
     }
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**");
-            }
-        };
-    }
+
 }
