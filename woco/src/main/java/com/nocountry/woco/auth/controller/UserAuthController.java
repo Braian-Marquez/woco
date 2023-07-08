@@ -16,7 +16,7 @@ import javax.validation.Valid;
 
 import java.io.IOException;
 
-@CrossOrigin(origins="**")
+@CrossOrigin(origins = {"https://s9-04-t-java-angular.web.app", "http://localhost:4200"})
 @RestController
 @RequestMapping("/auth")
 public class UserAuthController {
