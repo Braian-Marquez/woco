@@ -38,7 +38,7 @@ import java.util.Arrays;
 @EnableWebSecurity
 @Configuration
 @RequiredArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter implements Filter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -88,8 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Filt
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable().cors().and()
+        http.cors().and().csrf().disable()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
@@ -129,32 +128,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Filt
 
 
 
-    @Bean
-    public FilterRegistrationBean processCorsFilter() {
-        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        final CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.addAllowedOrigin("'");
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*");
-        source.registerCorsConfiguration("/**", config);
-
-
-        final FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
-        return bean;
-    }
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-            throws IOException, ServletException {
-        HttpServletRequest req = (HttpServletRequest) request;
-        HttpServletResponse res = (HttpServletResponse) response;
-        res.setHeader("Access-Control-Allow-Origin", req.getHeader("Origin"));
-        res.setHeader("Access-Control-Allow-Credentials", "true");
-        res.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, HEAD, OPTIONS");
-        res.setHeader("Access-Control-Max-Age", "3600");
-        res.setHeader("Access-Control-Allow-Headers", "authorization, content-type, xsrf-token");
-        res.setHeader("Cache-Control", "no-cache, no-store, max-age=36000");
-        chain.doFilter(request, response);
-    }
 }
