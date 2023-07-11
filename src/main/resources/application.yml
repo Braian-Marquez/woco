@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgres://root:IOttNi6SGG2XKIKdqz3LoGJVcCKKb04j@dpg-cimahe6nqqldjqj36nqg-a.oregon-postgres.render.com/prueba_cors
+    username: root
+    password: IOttNi6SGG2XKIKdqz3LoGJVcCKKb04j
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: mailprueba029@gmail.com
+    password: prcthbkvebjpdqpz
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+springdoc:
+  swagger-ui:
+    path=/api/docs:
