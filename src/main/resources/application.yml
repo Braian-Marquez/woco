@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgres://root:IOttNi6SGG2XKIKdqz3LoGJVcCKKb04j@dpg-cimahe6nqqldjqj36nqg-a.oregon-postgres.render.com/prueba_cors
-    username: root
-    password: IOttNi6SGG2XKIKdqz3LoGJVcCKKb04j
+    url: jdbc:postgresql://dpg-ciil3hunqql0tc50rjrg-a.oregon-postgres.render.com:5432/woco
+    username: admin
+    password: p37jBUKPERETNhWJKiXokuKBTxaW3QWG
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
