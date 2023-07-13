@@ -1,6 +1,5 @@
 package com.nocountry.woco.auth.model.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
