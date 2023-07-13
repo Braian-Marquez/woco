@@ -1,0 +1,3 @@
+com\nocountry\woco\WocoApplicationTests.class
+com\nocountry\woco\service\impl\EmailServiceTest.class
+com\nocountry\woco\auth\service\UserDetailsCustomServiceTest.class

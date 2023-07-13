@@ -15,10 +15,6 @@ class UserDetailsCustomServiceTest {
 private UserDetailsCustomService userDetailsCustomService;
     @Test
     void save() throws IOException {
-        /*UserRequest request = new UserRequest();
-        request.setFirstName("Erik");
-        request.setEmail("");
-        request.setPassword("123456789");
-        System.out.println(userDetailsCustomService.save(request));*/
+
     }
 }
