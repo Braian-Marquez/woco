@@ -40,14 +40,9 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
-
-    @Autowired
-    private JwtRequestFilter jwtFilter;
-
-    @Autowired
-    private AuthEntryPointJwt unauthorizedHandler;
+    private final UserDetailsService userDetailsService;
+    private final JwtRequestFilter jwtFilter;
+    private final AuthEntryPointJwt unauthorizedHandler;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -64,7 +59,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
             "/swagger-ui.html",
             "/webjars/**"
     };
-
 
     public void configure(AuthenticationManagerBuilder managerBuilder) throws Exception {
         managerBuilder.userDetailsService(userDetailsService)
