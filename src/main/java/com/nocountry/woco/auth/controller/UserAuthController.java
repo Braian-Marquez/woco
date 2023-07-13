@@ -6,11 +6,12 @@ import com.nocountry.woco.auth.model.request.UserRequest;
 import com.nocountry.woco.auth.model.response.AuthenticationResponse;
 import com.nocountry.woco.auth.model.response.UserResponse;
 import com.nocountry.woco.auth.service.UserDetailsCustomService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
@@ -27,11 +28,11 @@ public class UserAuthController {
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
 
     }
-   /* @PostMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> login (
             @RequestBody @Valid AuthenticationRequest authenticationRequest)  {
         return ResponseEntity.ok(userDetailsService.login(authenticationRequest));
-    }*/
+    }
 
 
 }
