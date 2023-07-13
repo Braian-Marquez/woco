@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ceecc166-28d9-4ce7-a362-5b744ff1642a" name="Changes" comment="refactor cors" />
+    <list default="true" id="ceecc166-28d9-4ce7-a362-5b744ff1642a" name="Changes" comment="refactor cors">
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/nocountry/woco/auth/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/nocountry/woco/auth/security/SecurityConfig.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +35,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2SATnYemxFTRZmsPcqxHULDxJBG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,7 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../No-Country-WOCO/s9-04-t-java-angular" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
