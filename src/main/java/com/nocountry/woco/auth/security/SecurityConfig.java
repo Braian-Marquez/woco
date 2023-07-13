@@ -35,7 +35,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 
-@EnableWebSecurity
+
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter  {
