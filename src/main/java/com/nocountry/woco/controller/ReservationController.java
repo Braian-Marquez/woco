@@ -24,8 +24,8 @@ public class ReservationController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ReservationResponse> getReservationById(@PathVariable Long id) {
-        ReservationResponse reservation = reservationService.getReservationById(id);
+    public ResponseEntity<ReservationResponse> getReservationById(@PathVariable int id) {
+        ReservationResponse reservation = reservationService.getReservationById(Long.valueOf(id));
         if (reservation != null) {
             return ResponseEntity.ok(reservation);
         } else {
@@ -41,8 +41,8 @@ public class ReservationController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ReservationResponse> updateReservation(
-            @PathVariable Long id, @RequestBody ReservationRequest reservationRequest) {
-        ReservationResponse updatedReservation = reservationService.updateReservation(id, reservationRequest);
+            @PathVariable int id, @RequestBody ReservationRequest reservationRequest) {
+        ReservationResponse updatedReservation = reservationService.updateReservation(Long.valueOf(id), reservationRequest);
         if (updatedReservation != null) {
             return ResponseEntity.ok(updatedReservation);
         } else {
@@ -51,8 +51,8 @@ public class ReservationController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteReservation(@PathVariable Long id) {
-        boolean deleted = reservationService.deleteReservation(id);
+    public ResponseEntity<Void> deleteReservation(@PathVariable int id) {
+        boolean deleted = reservationService.deleteReservation(Long.valueOf(id));
         if (deleted) {
             return ResponseEntity.noContent().build();
         } else {
@@ -61,8 +61,8 @@ public class ReservationController {
     }
 
     @GetMapping("/user/{id}")
-    public ResponseEntity<List<ReservationResponse>> getReservationsByUserId(@PathVariable Long id) {
-        List<ReservationResponse> reservations = reservationService.getAllReservationsByUserId(id);
+    public ResponseEntity<List<ReservationResponse>> getReservationsByUserId(@PathVariable int id) {
+        List<ReservationResponse> reservations = reservationService.getAllReservationsByUserId(Long.valueOf(id));
         return ResponseEntity.ok(reservations);
     }
 }

@@ -31,7 +31,7 @@ public class LocationController {
 
     @GetMapping("/{id}")
     public ResponseEntity<LocationDto> getById(@PathVariable int id) throws ResourceNotFoundException {
-        LocationDto response = locationService.getById(id);
+        LocationDto response = locationService.getById(Long.valueOf(id));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
@@ -43,13 +43,13 @@ public class LocationController {
 
     @PatchMapping("/{id}")
     public ResponseEntity<LocationDto> patchCity(@PathVariable int id, @RequestBody Location location) throws ResourceNotFoundException {
-        LocationDto updatedCity = locationService.patch(id, location);
+        LocationDto updatedCity = locationService.patch(Long.valueOf(id), location);
         return ResponseEntity.ok(updatedCity);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCity(@PathVariable int id) throws ResourceNotFoundException {
-        locationService.delete(id);
+        locationService.delete(Long.valueOf(id));
         return ResponseEntity.status(HttpStatus.ACCEPTED)
                 .body("City deleted");
     }

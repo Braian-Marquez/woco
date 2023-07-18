@@ -20,20 +20,20 @@ public class ServiceController {
         return serviceService.getAllServices();
     }
     @GetMapping("/{id}")
-    public ServiceResponse getServiceById(@PathVariable Long id) {
-        return serviceService.getServiceById(id);
+    public ServiceResponse getServiceById(@PathVariable int id) {
+        return serviceService.getServiceById(Long.valueOf(id));
     }
     @PostMapping
     public ServiceResponse addService(@RequestBody ServiceRequest serviceRequest) {
         return serviceService.addService(serviceRequest);
     }
     @PutMapping
-    public ServiceResponse updateService(@PathVariable Long id,@RequestBody ServiceRequest serviceRequest) {
-        return serviceService.updateService(id,serviceRequest);
+    public ServiceResponse updateService(@PathVariable int id,@RequestBody ServiceRequest serviceRequest) {
+        return serviceService.updateService(Long.valueOf(id),serviceRequest);
     }
     @DeleteMapping("/{id}")
-    public void deleteService(@PathVariable Long id) {
-        serviceService.deleteService(id);
+    public void deleteService(@PathVariable int id) {
+        serviceService.deleteService(Long.valueOf(id));
     }
 
     @GetMapping("/price/{price}")
