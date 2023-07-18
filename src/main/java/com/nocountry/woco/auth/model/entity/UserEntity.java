@@ -3,10 +3,7 @@ package com.nocountry.woco.auth.model.entity;
 import com.nocountry.woco.model.entity.Reservation;
 import com.nocountry.woco.model.entity.Services;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Type;
@@ -50,7 +47,7 @@ public class UserEntity implements UserDetails {
     @OneToMany
     private List<Reservation> reservations;
 
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<RoleEntity> roles;
 
     @CreationTimestamp
@@ -59,6 +56,7 @@ public class UserEntity implements UserDetails {
 
     @Column(name = "soft_delete")
     private Boolean softDelete = Boolean.FALSE;
+
 
 
     @Override
