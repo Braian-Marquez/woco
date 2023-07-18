@@ -3,9 +3,11 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-ciil3hunqql0tc50rjrg-a.oregon-postgres.render.com:5432/woco
-    username: admin
-    password: p37jBUKPERETNhWJKiXokuKBTxaW3QWG
+    #url: jdbc:postgresql://dpg-ciil3hunqql0tc50rjrg-a.oregon-postgres.render.com:5432/woco
+    url: jdbc:postgresql://dpg-cimahe6nqqldjqj36nqg-a.oregon-postgres.render.com/prueba_cors
+    username: root
+    #password: p37jBUKPERETNhWJKiXokuKBTxaW3QWG
+    password: IOttNi6SGG2XKIKdqz3LoGJVcCKKb04j
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
