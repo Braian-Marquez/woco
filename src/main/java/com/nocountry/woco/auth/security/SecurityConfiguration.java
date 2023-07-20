@@ -26,6 +26,7 @@ public class SecurityConfiguration {
         .csrf()
         .disable()
         .authorizeHttpRequests()
+        .anyRequest()
         .permitAll()
         .and()
         .sessionManagement()
